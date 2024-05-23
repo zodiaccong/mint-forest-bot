@@ -78,8 +78,9 @@ const injectEnergy = async (token, energy, address) => {
 };
 
 const getTokenList = () => {
-  const jsonFileContent = fs.readFileSync('token.txt', 'utf8').split('\n');
-  return jsonFileContent
+  const acc = fs.readFileSync('token.txt', 'utf8').split('\n');
+  const acc = acc.filter(element => element.trim() !== '');
+  return acc
 };
 
 module.exports = {
