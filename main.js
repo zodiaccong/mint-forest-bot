@@ -26,9 +26,6 @@ const main = async () => {
         console.log();
 
         const token = tokenList[i];
-        if (token == "") {
-          continue
-        }
         const userInfo = await fetchUserInfo(token);
         const { id, address, treeId, status, energy } = userInfo.result;
 
